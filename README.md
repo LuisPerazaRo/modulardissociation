@@ -3,7 +3,7 @@
 
 Welcome to the data and code sharing tutorial for the article “The functional brain favours segregated modular connectivity at old age unless targeted by neurodegeneration” which is currently under review.
 
-The database for this tutorial is published in [Figshare](https://figshare.com/s/7057a9ac73458c3ebbcc). This database contains a PDF file describing the variables as well as a Matlab file with all participant matrices from the NKI database. Download the matlab data file NKImatrices_Peraza.mat and you will be ready for this tutorial!
+The database for this tutorial is published in [Figshare](https://figshare.com/s/7057a9ac73458c3ebbcc). This database contains a PDF file describing the variables as well as a Matlab file with all participant matrices from the NKI cohort. Download the matlab data file NKImatrices_Peraza.mat and you will be ready for this tutorial!
  
 We start adding the toolboxes we need to the Matlab path. My custom functions for modular variability/dissociation (MV/MD), and local/global network thresholding are stored in the MDToolbox folder,
 ```Matlab
@@ -21,7 +21,7 @@ Load the NKI database matrices
 ```Matlab
 load('NKImatrices_Peraza.mat')
 ```
-After loading the mat file to the Matlab workspace you will see several variables. These comprise basic demographics for age and sex, and the connectivity matrices. These connectivity matrices were estimated using Pearson correlations and the functional atlases from an independent older adult group from [Peraza et al. 2017](https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.23499). These atlases are available on the [Figshare](https://figshare.com/s/7057a9ac73458c3ebbcc) repository.
+After loading the mat file to the Matlab workspace you will see several variables. These comprise basic demographics for age and sex, and the connectivity matrices. These connectivity matrices were estimated using Pearson correlations and the functional atlases from an independent older adult group in [Peraza et al. 2017](https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.23499). These atlases are available on the [Figshare](https://figshare.com/s/7057a9ac73458c3ebbcc) repository.
 
 Now, download the MNI coordinate system used in my study from the Figshare database and load the ROI coordinates (in MNI). For the example in this tutorial, we will use the 100 ROI atlas and matrices, but the same principles apply to the other atlases.
 ```Matlab
@@ -29,7 +29,7 @@ load('MNIcoordinateSystem\MNI100roi_atlas.mat')
 coords=MNI100coords(:,1:3);     %Ignore the fourth columns
 clear MNI100coords              %delete the variable and keep coords
 ```
-Select one participant from the NKI database, and this participant can be random for the purposes of this tutorial. It his case I choose the 100th participant from the younger adult connectivity matrices, and we specify as well as the average node degre we wish to threshold the connectivity matrix:
+Select one participant from the NKI database, and this participant can be random for the purposes of this tutorial. It this case I choose the 100th participant from the younger adult connectivity matrices, and we specify as well as the average node degre we wish to threshold the connectivity matrix:
 ```Matlab
 pat = 100;
 pat_matrix = abs(Connectome100_YA_NKI(:,:,pat)); %The absolute value
@@ -42,7 +42,7 @@ Now we perfom **local thresolding** of this connectivity matrix. Local threshold
 newmatLT=localThresholding(pat_matrix,deg);
 newmatLT=newmatLT(:,:,2);
 ```
-With the thresholded matrix, estimate network commnunities with the Louvain's algorithm (from the BCT). For this example I will run Louvain's 50 times. Current publications recommend > 500 iterations of the algorithm, although this number depends on the network size. For the code below, I am comparing and saving, at each iteration of the for loop, the new estimated community stored in CiLT variable that shows a higher modularity index Q.
+With the thresholded matrix, estimate network commnunities with the Louvain's algorithm (from the BCT). For this example I will run Louvain's 50 times. Current publications recommend > 500 iterations of the algorithm, although this number depends on the network size. For the code below, I am comparing and saving (at each iteration of the for loop) the new estimated community stored in CiLT variable that shows a higher modularity index Q.
 ```Matlab
 modularityLT=0;
 for iter=1:50 
