@@ -1,7 +1,22 @@
 # Modular dissociation 
-## Data sharing tutorial
 
 Welcome to the data and code sharing tutorial for the article “The functional brain favours segregated modular connectivity at old age unless targeted by neurodegeneration” which is currently under review.
+
+## Needed Toolboxes
+
+Below is a list of toolboxes/libraries used in my research report. All of these are open source and can be downloaded from thier original sources.
+
+* [Brain Connectivity Toolbox (BCT)](https://sites.google.com/site/bctnet)
+* [MIT Matlab Tools for Network Analysis  for the MST](http://strategic.mit.edu/downloads.php?page=matlab_networks) 
+* [Network Community Toolbox (NCT) – Consensus community](http://commdetect.weebly.com) 
+* [BrainNet Viewer](https://www.nitrc.org/projects/bnv) 
+* [FMRIB Software Library (FSL) v5.0](https://fsl.fmrib.ox.ac.uk)
+* [BrainWavelet Toolbox](http://www.brainwavelet.org) 
+* [Anatomical location of regions in MNI coordinates; cuixufindstructure.m (Matlab)](http://www.alivelearn.net/)   
+* [Diverging colour maps for visualization](http://www.kennethmoreland.com/) 
+* [pyClusterROI for functional atlases from fMRI](http://ccraddock.github.io/cluster_roi)
+
+## Data sharing tutorial
 
 The database for this tutorial is published in [Figshare](https://figshare.com/s/7057a9ac73458c3ebbcc). This database contains a PDF file describing the variables as well as a Matlab file with all participant matrices from the NKI cohort. Download the matlab data file NKImatrices_Peraza.mat and you will be ready for this tutorial!
  
