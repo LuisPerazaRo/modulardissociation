@@ -1,10 +1,12 @@
 # Modular dissociation 
 
-Welcome to the data and code sharing tutorial for the article “The functional brain favours segregated modular connectivity at old age unless targeted by neurodegeneration” which is currently under review.
+Welcome to the data and code sharing tutorial for the article “The functional brain favours segregated modular connectivity at old age unless targeted by neurodegeneration” which is currently under review. 
+
+This paper is now in preprint format and can be downloaded from BioRxiv here: [Peraza et al. (under review)](https://www.biorxiv.org/content/early/2018/11/07/463810)
 
 ## Needed Toolboxes
 
-Below is a list of toolboxes/libraries used in my research report. All of these are open source and can be downloaded from thier original sources.
+Below is a list of toolboxes/libraries used in my research report. All of these are open source and can be downloaded from their original sources.
 
 * [Brain Connectivity Toolbox (BCT)](https://sites.google.com/site/bctnet)
 * [MIT Matlab Tools for Network Analysis  for the MST](http://strategic.mit.edu/downloads.php?page=matlab_networks) 
